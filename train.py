@@ -27,3 +27,5 @@ model_lr.fit(X_train,y_train)
 
 os.makedirs('artifacts', exist_ok=True)
 joblib.dump(model_lr,'artifacts/loan_default_model.joblib')
+joblib.dump(X_test,'artifacts/X_test.joblib')
+joblib.dump(y_test,'artifacts/y_test.joblib')
