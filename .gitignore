@@ -1,0 +1,52 @@
+# =========================
+# Python cache & compiled
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual environment
+# =========================
+venv/
+.env/
+.env.*
+
+# =========================
+# Data files (DO NOT COMMIT)
+# =========================
+*.csv
+*.xlsx
+*.parquet
+data/
+
+# =========================
+# Model artifacts
+# =========================
+artifacts/
+*.joblib
+*.pkl
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# OS / Editor files
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Misc
+# =========================
+pytest_cache/
+.mypy_cache/
