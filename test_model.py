@@ -3,18 +3,18 @@ import os
 from sklearn.metrics import (classification_report, confusion_matrix,roc_auc_score,accuracy_score,
  precision_score,recall_score,f1_score)
 from config import MODEL_PATH,X_TEST_PATH,Y_TEST_PATH
-from train import X_test
+
 
 
 
 # Load the model and test data
 def load_artifacts():
 
-    if not all(
-        [os.path.exists(MODEL_PATH)],
-        [os.path.exists(X_TEST_PATH)],
-        [os.path.exists(Y_TEST_PATH)]
-    ):
+    if not all([
+        os.path.exists(MODEL_PATH),
+        os.path.exists(X_TEST_PATH),
+        os.path.exists(Y_TEST_PATH)
+    ]):
         raise FileNotFoundError("One or more artifact files are missing.")
 
     logistic_model = joblib.load(MODEL_PATH)
@@ -22,6 +22,8 @@ def load_artifacts():
     y_test = joblib.load(Y_TEST_PATH)
     
     return logistic_model,X_test,y_test
+
+
 
 
 def evaluate_model(model,X_test,y_test):
